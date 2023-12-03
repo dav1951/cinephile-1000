@@ -1,0 +1,75 @@
+.info {
+    min-height: 0;
+    background: #000;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    transition: 0.5s;
+    
+    &.active {
+        min-height: 700px;
+    }
+    
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        border-radius: 50%;
+        padding: 15px 18px;
+        background: rgba(20, 20, 20, 0.70);
+        font-size: 26px;
+    }
+    
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    &__content {
+        position: relative;
+        background: linear-gradient(90deg, #000 42%, rgba(0, 0, 0, 0.20) 82%, rgba(0, 0, 0, 0.00));
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 50px;
+        gap: 30px;
+    }
+    
+    &__wrapper {
+        width: 100%;
+    }
+    
+    &__title {
+        font-size: 50px;
+        max-width: 935px;
+    }
+    
+    &__desc {
+        font-size: 20px;
+        line-height: 150%;
+        max-width: 935px;
+    }
+    
+    &__about {
+        color: rgba(255, 255, 255, 0.60);
+        font-family: $font-mon;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 150%; /* 150% */
+        display: flex;
+        gap: 30px;
+    }
+    
+    &__actors {
+        max-width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}

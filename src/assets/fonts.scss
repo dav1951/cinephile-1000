@@ -1,0 +1,19 @@
+$fonts: ('Inter', 'Regular', 400),
+        ('Montserrat', 'Bold', 700),
+        ('Montserrat', 'BoldItalic', 700),
+        ('Montserrat', 'Light', 300),
+        ('Montserrat', 'Regular', 400),
+        ('MontserratAlternates', 'Bold', 700),
+        ('Raleway', 'Bold', 700),
+        ('Raleway', 'Regular', 400);
+        
+@each $family, $name, $weight in $fonts {
+    @font-face {
+        font-family: $family;
+        src: url(./fonts/#{$family}-#{$name}.ttf);
+        font-weight: $weight;
+        @if $name == 'BoldItalic' {
+            font-style: italic;
+        }
+    }
+}

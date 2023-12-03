@@ -1,0 +1,82 @@
+.rate {
+    background: #fff;
+    padding: 30px 0;
+
+    &__title {
+        color: #141414;
+        font-family: $font-mon;
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 30px;
+        padding-left: 100px;
+        padding-bottom: 88px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+    }
+
+    &__subtitle {
+        color: #149A03;
+        font-family: $font-mon-alt;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+    }
+    
+    &__item {
+        border-radius: 10px;
+        background: #141414;
+        box-shadow: 0px 20px 15px -10px rgba(0, 0, 0, 0.25);
+        height: 463px;
+        overflow: hidden;
+        @include media($xl) {
+            height: 400px;
+        }
+        @include media($lg) {
+            height: 400px;
+        }
+        @include media(380) {
+            height: auto;
+            min-height: 300px;
+        }
+        
+    }
+    
+    &__img {
+        position: absolute;
+        height: 100%;
+        width: 65%;
+        object-fit: cover;
+        top: 0;
+        right: 0;
+        
+        @include media(500px) {
+            width: 100%;
+        }
+        
+    }
+    
+    &__content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 80px;
+        
+       
+        font-family: $font-mon;
+        font-size: 150px;
+        font-style: italic;
+        font-weight: 700;
+        
+        background: linear-gradient(90deg, #141414 35%, rgba(20, 20, 20, 0.00));
+        @include media(500px) {
+            background:  rgba(0, 0, 0, 0.5);
+        }
+        
+
+    }
+}

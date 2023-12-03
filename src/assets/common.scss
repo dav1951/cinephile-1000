@@ -1,0 +1,116 @@
+$font-inter: 'Inter';
+$font-mon: 'Montserrat';
+$font-mon-alt: 'MontserratAlternates';
+$font-rel: 'Raleway';
+
+$body: #141414;
+$color: #fff;
+
+$xl: 1400px;
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 576px;
+
+@mixin media($size: $xl) {
+  @media (max-width: $size) {
+    @content
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: $font-rel;
+    background: $body;
+    color: $color;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  button, input, textarea {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+  }
+  
+  .container {
+    max-width: 1344px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+    @include media() {
+      max-width: 1140px;
+    }
+    @include media($lg) {
+      max-width: 960px;
+    }
+    @include media($md) {
+      max-width: 720px;
+    }
+    @include media($sm) {
+      max-width: 540px;
+    }
+  }
+  
+.text-limit {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.more {
+  border-radius: 10px;
+  background: #149A03;
+  padding: 10px 15px;
+  font-size: 20px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  
+  @include media($md) {
+    font-size: 18px;
+  }
+  
+  @include media($sm) {
+    font-size: 16px;
+    gap: 10px;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  
+  &__spiner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid green;
+    border-bottom-color: transparent;
+    animation: loading 1s linear infinite;
+  }
+}
+
+@keyframes loading {
+  0% { transform: rotate(0);}
+  100% {transform: rotate(360deg);}
+}
